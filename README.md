@@ -33,6 +33,16 @@ done
 
 The size of one set ranges from 71 Mb to 255 Mb (packed). Uncompressed total size around 5.1 Gb.
 
+# Running the code
+
+```
+mkdir /home/meng72/mr/data/advio/advio-04/iphone/frames-gray
+python3 sync-data-single.py /home/meng72/mr/data/advio/ 4
+python3 extract_grayscale_imgs.py /home/meng72/mr/data/advio/ 4
+mkdir /home/meng72/mr/data/advio/advio-04/iphone/frames-gray-rn
+python3 change_names_of_imgs.py /home/meng72/mr/data/advio/advio-04/iphone/frames-gray /home/meng72/mr/data/advio/advio-04/iphone/frames-gray-rn
+```
+
 # Details on collected data
 
 ![Setup](https://github.com/AaltoVision/ADVIO/blob/master/setup.png)
