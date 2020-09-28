@@ -25,8 +25,8 @@ roslib.load_manifest('sensor_msgs')
 from sensor_msgs.msg import Image
 from sensor_msgs.msg import Imu
 #Deal with ros and opencv path error.
-if '/opt/ros/kinetic/lib/python2.7/dist-packages'in sys.path:
-    sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
+#if '/opt/ros/kinetic/lib/python2.7/dist-packages'in sys.path:
+#    sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
 import rospy
 # Import opencv
 import cv2
