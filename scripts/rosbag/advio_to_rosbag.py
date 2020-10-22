@@ -113,13 +113,38 @@ for i in iter(tst):
             # Create imu ros structure and put in the bias corrected values.
             imu=Imu()
             imu.header.stamp=Stamp
-            imu.angular_velocity.x=float(gyr[0])+0.0067
-            imu.angular_velocity.y=float(gyr[1])-0.0070
-            imu.angular_velocity.z=float(gyr[2])+0.0065
+            if i >= 1 and i <= 12:
+                imu.angular_velocity.x=float(gyr[0])+0.0067
+                imu.angular_velocity.y=float(gyr[1])-0.0070
+                imu.angular_velocity.z=float(gyr[2])+0.0065
 
-            imu.linear_acceleration.x=(float(acc[0])-0.0407)
-            imu.linear_acceleration.y=(float(acc[1])+0.0623)
-            imu.linear_acceleration.z=(float(acc[2])-0.1017)
+                imu.linear_acceleration.x=(float(acc[0])-0.0407)
+                imu.linear_acceleration.y=(float(acc[1])+0.0623)
+                imu.linear_acceleration.z=(float(acc[2])-0.1017)
+            elif i >= 13 and i <= 17:
+                imu.angular_velocity.x=float(gyr[0])+0.0065
+                imu.angular_velocity.y=float(gyr[1])-0.0055
+                imu.angular_velocity.z=float(gyr[2])+0.0064
+
+                imu.linear_acceleration.x=(float(acc[0])-0.0415)
+                imu.linear_acceleration.y=(float(acc[1])+0.0617)
+                imu.linear_acceleration.z=(float(acc[2])-0.1008)
+            elif i >= 18 and i <= 19:
+                imu.angular_velocity.x=float(gyr[0])+0.0069
+                imu.angular_velocity.y=float(gyr[1])-0.0062
+                imu.angular_velocity.z=float(gyr[2])+0.0067
+
+                imu.linear_acceleration.x=(float(acc[0])-0.0393)
+                imu.linear_acceleration.y=(float(acc[1])+0.0635)
+                imu.linear_acceleration.z=(float(acc[2])-0.1024)
+            elif i >= 20 and i <= 23:
+                imu.angular_velocity.x=float(gyr[0])+0.0066
+                imu.angular_velocity.y=float(gyr[1])-0.0065
+                imu.angular_velocity.z=float(gyr[2])+0.0063
+
+                imu.linear_acceleration.x=(float(acc[0])-0.0405)
+                imu.linear_acceleration.y=(float(acc[1])+0.0620)
+                imu.linear_acceleration.z=(float(acc[2])-0.1012)
             
             # Put Imu measurement in rosbag.
             bag.write('/imu0',imu,Stamp)

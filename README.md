@@ -36,6 +36,7 @@ The size of one set ranges from 71 Mb to 255 Mb (packed). Uncompressed total siz
 # Running the code
 
 ```
+ls | sort -g > times.txt
 mkdir /home/meng72/mr/data/advio/advio-04/iphone/frames-gray
 python3 sync-data-single.py /home/meng72/mr/data/advio/ 4
 python3 extract_grayscale_imgs.py /home/meng72/mr/data/advio/ 4
@@ -45,6 +46,8 @@ python3 change_names_of_imgs_v2.py /home/meng72/mr/data/advio/advio-04/iphone/fr
 
 python advio_to_rosbag.py /home/meng72/mr/data/advio 4
 python3 gen_imu_cam_calibration.py ~/mr/ADVIO/calibration/iphone-02.yaml
+
+python3 extract_rgb_imgs_for_zhan.py /home/meng72/mr/data/advio/ 4
 ```
 
 # Details on collected data
